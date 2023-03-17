@@ -8,6 +8,8 @@ function Chat({setShowChat,socket,username,room,setUserName,setRoom}) {
   
   const handleSendMessage=()=>
   {
+    if(currentMessage.trim()!=="")
+    {
     let now= new Date()
      let data={
       currentMessage,
@@ -19,7 +21,7 @@ function Chat({setShowChat,socket,username,room,setUserName,setRoom}) {
      console.log(data)
      setMessages([...messages,data])
      setCurrentMessage("")
-     
+    }
   }
   const handleExit=()=>
   {
