@@ -70,9 +70,9 @@ function Chat({setShowChat,socket,username,room,setUserName,setRoom}) {
 
             {messages && messages.map((message)=>
             { return(
-              <div className='messagebox'  style={{width:"400px", backgroundColor:`${message.username===username?"#9FBCE8":"#D9D9D9"}`,marginTop:"20px",borderRadius:"20px",paddingLeft:"15px",paddingTop:"5px",marginLeft:`${message.username===username?"auto":"0px"}`}}>
+              <div className='messagebox'  style={{width:"400px", backgroundColor:`${message.username.toLowercase()===username.toLowercase()?"#9FBCE8":"#D9D9D9"}`,marginTop:"20px",borderRadius:"20px",paddingLeft:"15px",paddingTop:"5px",marginLeft:`${message.username.toLowercase()===username.toLowercase()?"auto":"0px"}`}}>
               <div className='d-flex'>
-             <h5 style={{color:`${message.username===username?"#521D1D":"#434182"}`}}>{message.username===username?"Me":message.username}</h5>
+             <h5 style={{color:`${message.username.toLowercase()===username.toLowercase()?"#521D1D":"#434182"}`}}>{message.username.toLowercase()===username.toLowercase()?"Me":message.username}</h5>
              <p style={{marginLeft:"auto",marginRight:"20px"}}>{message.date}</p>
              </div>
              <p style={{marginTop:"5px"}}>{message.currentMessage}</p>
